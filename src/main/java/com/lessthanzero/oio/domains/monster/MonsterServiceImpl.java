@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Service
 public class MonsterServiceImpl implements MonsterService{
@@ -26,9 +27,24 @@ public class MonsterServiceImpl implements MonsterService{
      * @param id - ID to search the database for
      * @return - encounter with associated EncounterId
      */
+    @Override
     public Monster getMonsterById (Long id) {
         try {
             return monsterRepository.getMonsterById(id);
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            throw new ServerError(e.getMessage());
+        }
+    }
+
+    /**
+     * Retrieves all patients from the database
+     * @return List of all patients present in the database
+     */
+    @Override
+    public List<Monster> getMonsters() {
+        try {
+            return monsterRepository.findAll();
         } catch (DataAccessException e) {
             logger.error(e.getMessage());
             throw new ServerError(e.getMessage());

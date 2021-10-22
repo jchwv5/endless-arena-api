@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 import static com.lessthanzero.oio.constants.Paths.MONSTERS_PATH;
 
 @RestController
@@ -31,6 +33,17 @@ public class MonsterController {
             throws Exception {
         logger.info("Request received for Get Monster by ID: " + id);
         return new ResponseEntity<>(monsterService.getMonsterById(id), HttpStatus.OK);
+    }
+
+    /**
+     * retrieves all patients from the database
+     * @return list of patients currently present in the database
+     */
+    @GetMapping
+    public ResponseEntity<List<Monster>> getMonsters() {
+        logger.info("Request received for getMonsters");
+
+        return new ResponseEntity<>(monsterService.getMonsters(), HttpStatus.OK);
     }
 
 }

@@ -3,8 +3,8 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <groupId>io.catalyte.training.sportsproducts</groupId>
-  <artifactId>sports-apparel-api</artifactId>
+  <groupId>com.lessthanzero.oio</groupId>
+  <artifactId>oi--monsters-api</artifactId>
   <build>
     <plugins>
       <plugin>
@@ -40,7 +40,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <mainClass>io.catalyte.training.sportsproducts.AppRunner</mainClass>
+          <mainClass>com.lessthanzero.oio.AppRunner</mainClass>
         </configuration>
         <executions>
           <execution>
