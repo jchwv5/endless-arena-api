@@ -43,7 +43,7 @@ public class MonsterFactory {
         monsterList.add(skeleton);
 
         Monster goblin = new Monster();
-        goblin.setName("Slime");
+        goblin.setName("Goblin");
         goblin.setHealth(50);
         goblin.setAttack(10);
         goblin.setDefense(3);
