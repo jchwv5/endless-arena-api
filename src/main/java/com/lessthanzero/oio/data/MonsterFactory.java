@@ -13,40 +13,45 @@ public class MonsterFactory {
         Monster slime = new Monster();
         slime.setName("Slime");
         slime.setHealth(25);
-        slime.setAttack(5);
-        slime.setDefense(2);
+        slime.setAtk(10);
+        slime.setDef(2);
+        slime.setExp(15);
         slime.setImgSrc("../assets/Slime.png");
         monsterList.add(slime);
 
         Monster bat = new Monster();
         bat.setName("Bat");
         bat.setHealth(20);
-        bat.setAttack(6);
-        bat.setDefense(1);
+        bat.setAtk(12);
+        bat.setDef(1);
+        bat.setExp(10);
         bat.setImgSrc("../assets/Bat.png");
         monsterList.add(bat);
 
         Monster wolf = new Monster();
         wolf.setName("Wolf");
         wolf.setHealth(30);
-        wolf.setAttack(6);
-        wolf.setDefense(2);
+        wolf.setAtk(15);
+        wolf.setDef(2);
+        wolf.setExp(20);
         wolf.setImgSrc("../assets/Wolf.png");
         monsterList.add(wolf);
 
         Monster skeleton = new Monster();
         skeleton.setName("Skeleton");
         skeleton.setHealth(35);
-        skeleton.setAttack(8);
-        skeleton.setDefense(1);
+        skeleton.setAtk(14);
+        skeleton.setDef(1);
+        skeleton.setExp(25);
         skeleton.setImgSrc("../assets/Skeleton.png");
         monsterList.add(skeleton);
 
         Monster goblin = new Monster();
         goblin.setName("Goblin");
         goblin.setHealth(50);
-        goblin.setAttack(10);
-        goblin.setDefense(3);
+        goblin.setAtk(20);
+        goblin.setDef(3);
+        goblin.setExp(30);
         goblin.setImgSrc("../assets/Goblin.png");
         monsterList.add(goblin);
 

@@ -4,4 +4,7 @@ public class Paths {
 
   // Local
   public static final String MONSTERS_PATH = "/monsters";
+  public static final String PLAYERS_PATH = "/players";
+  public static final String ITEM_PATH = "/items";
+  public static final String INVENTORY_PATH = "/inventory";
 }

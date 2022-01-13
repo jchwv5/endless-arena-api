@@ -19,18 +19,21 @@ public class Monster {
     @Required
     private Integer health;
     @Required
-    private Integer attack;
+    private Integer atk;
     @Required
-    private Integer defense;
+    private Integer def;
+    @Required
+    private Integer exp;
     @Required
     private String imgSrc;
 
-    public Monster(Long id, String name, Integer health, Integer attack, Integer defense, String imgSrc) {
+    public Monster(Long id, String name, Integer health, Integer atk, Integer def, Integer exp, String imgSrc) {
         this.id = id;
         this.name = name;
         this.health = health;
-        this.attack = attack;
-        this.defense = defense;
+        this.atk = atk;
+        this.def = def;
+        this.exp = exp;
         this.imgSrc = imgSrc;
     }
 
@@ -62,20 +65,28 @@ public class Monster {
         this.health = health;
     }
 
-    public Integer getAttack() {
-        return attack;
+    public Integer getAtk() {
+        return atk;
     }
 
-    public void setAttack(Integer attack) {
-        this.attack = attack;
+    public void setAtk(Integer atk) {
+        this.atk = atk;
     }
 
-    public Integer getDefense() {
-        return defense;
+    public Integer getDef() {
+        return def;
     }
 
-    public void setDefense(Integer defense) {
-        this.defense = defense;
+    public void setDef(Integer def) {
+        this.def = def;
+    }
+
+    public Integer getExp() {
+        return exp;
+    }
+
+    public void setExp(Integer exp) {
+        this.exp = exp;
     }
 
     public String getImgSrc() {
@@ -91,12 +102,12 @@ public class Monster {
         if (this == o) return true;
         if (!(o instanceof Monster)) return false;
         Monster monster = (Monster) o;
-        return Objects.equals(getId(), monster.getId()) && Objects.equals(getName(), monster.getName()) && Objects.equals(getHealth(), monster.getHealth()) && Objects.equals(getAttack(), monster.getAttack()) && Objects.equals(getDefense(), monster.getDefense()) && Objects.equals(getImgSrc(), monster.getImgSrc());
+        return Objects.equals(getId(), monster.getId()) && Objects.equals(getName(), monster.getName()) && Objects.equals(getHealth(), monster.getHealth()) && Objects.equals(getAtk(), monster.getAtk()) && Objects.equals(getDef(), monster.getDef()) && Objects.equals(getExp(), monster.getExp()) && Objects.equals(getImgSrc(), monster.getImgSrc());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getHealth(), getAttack(), getDefense(), getImgSrc());
+        return Objects.hash(getId(), getName(), getHealth(), getAtk(), getDef(), getExp(), getImgSrc());
     }
 
     @Override
@@ -105,8 +116,9 @@ public class Monster {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", health=" + health +
-                ", attack=" + attack +
-                ", defense=" + defense +
+                ", atk=" + atk +
+                ", def=" + def +
+                ", exp=" + exp +
                 ", imgSrc='" + imgSrc + '\'' +
                 '}';
     }
