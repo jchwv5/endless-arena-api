@@ -63,29 +63,80 @@ public class DemoData implements CommandLineRunner {
         Player player = playerList.get(0);
 
         List<Item> itemList = itemFactory.generateItems();
-        Item item1 = itemList.get(0);
-        Item item2 = itemList.get(1);
-        Item item3 = itemList.get(2);
 
         List<Inventory> inventoryList = new ArrayList<>();
 
         Inventory inventory1 = new Inventory();
-        inventory1.setItem(item1);
+        inventory1.setItem(itemList.get(0));
         inventory1.setPlayer(player);
         inventory1.setQuantity(1);
         inventoryList.add(inventory1);
 
         Inventory inventory2 = new Inventory();
-        inventory2.setItem(item2);
+        inventory2.setItem(itemList.get(1));
         inventory2.setPlayer(player);
         inventory2.setQuantity(1);
         inventoryList.add(inventory2);
 
         Inventory inventory3 = new Inventory();
-        inventory3.setItem(item3);
+        inventory3.setItem(itemList.get(2));
         inventory3.setPlayer(player);
         inventory3.setQuantity(1);
         inventoryList.add(inventory3);
+
+        Inventory inventory4 = new Inventory();
+        inventory4.setItem(itemList.get(3));
+        inventory4.setPlayer(player);
+        inventory4.setQuantity(1);
+        inventoryList.add(inventory4);
+
+        Inventory inventory5 = new Inventory();
+        inventory5.setItem(itemList.get(4));
+        inventory5.setPlayer(player);
+        inventory5.setQuantity(1);
+        inventoryList.add(inventory5);
+
+        Inventory inventory6 = new Inventory();
+        inventory6.setItem(itemList.get(5));
+        inventory6.setPlayer(player);
+        inventory6.setQuantity(1);
+        inventoryList.add(inventory6);
+
+        Inventory inventory7 = new Inventory();
+        inventory7.setItem(itemList.get(6));
+        inventory7.setPlayer(player);
+        inventory7.setQuantity(1);
+        inventoryList.add(inventory7);
+
+        Inventory inventory8 = new Inventory();
+        inventory8.setItem(itemList.get(7));
+        inventory8.setPlayer(player);
+        inventory8.setQuantity(1);
+        inventoryList.add(inventory8);
+
+        Inventory inventory9 = new Inventory();
+        inventory9.setItem(itemList.get(8));
+        inventory9.setPlayer(player);
+        inventory9.setQuantity(1);
+        inventoryList.add(inventory9);
+
+        Inventory inventory10 = new Inventory();
+        inventory10.setItem(itemList.get(9));
+        inventory10.setPlayer(player);
+        inventory10.setQuantity(1);
+        inventoryList.add(inventory10);
+
+        Inventory inventory11 = new Inventory();
+        inventory11.setItem(itemList.get(10));
+        inventory11.setPlayer(player);
+        inventory11.setQuantity(1);
+        inventoryList.add(inventory11);
+
+        Inventory inventory12 = new Inventory();
+        inventory12.setItem(itemList.get(11));
+        inventory12.setPlayer(player);
+        inventory12.setQuantity(1);
+        inventoryList.add(inventory12);
 
         List<CommonLootTable> commonLootTableList = new ArrayList<>();
 
