@@ -108,36 +108,6 @@ public class DemoData implements CommandLineRunner {
         inventory7.setQuantity(1);
         inventoryList.add(inventory7);
 
-        Inventory inventory8 = new Inventory();
-        inventory8.setItem(itemList.get(7));
-        inventory8.setPlayer(player);
-        inventory8.setQuantity(1);
-        inventoryList.add(inventory8);
-
-        Inventory inventory9 = new Inventory();
-        inventory9.setItem(itemList.get(8));
-        inventory9.setPlayer(player);
-        inventory9.setQuantity(1);
-        inventoryList.add(inventory9);
-
-        Inventory inventory10 = new Inventory();
-        inventory10.setItem(itemList.get(9));
-        inventory10.setPlayer(player);
-        inventory10.setQuantity(1);
-        inventoryList.add(inventory10);
-
-        Inventory inventory11 = new Inventory();
-        inventory11.setItem(itemList.get(10));
-        inventory11.setPlayer(player);
-        inventory11.setQuantity(1);
-        inventoryList.add(inventory11);
-
-        Inventory inventory12 = new Inventory();
-        inventory12.setItem(itemList.get(11));
-        inventory12.setPlayer(player);
-        inventory12.setQuantity(1);
-        inventoryList.add(inventory12);
-
         List<CommonLootTable> commonLootTableList = new ArrayList<>();
 
         CommonLootTable slimeCommonLootTable1 = new CommonLootTable();
