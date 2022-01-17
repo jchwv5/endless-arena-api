@@ -1,5 +1,7 @@
 package com.lessthanzero.oio.domains.inventory;
 
+import com.lessthanzero.oio.domains.player.Player;
+import com.lessthanzero.oio.exceptions.BadRequest;
 import com.lessthanzero.oio.exceptions.ServerError;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +30,27 @@ public class InventoryServiceImpl implements InventoryService{
         } catch (DataAccessException e) {
             logger.error(e.getMessage());
             throw new ServerError(e.getMessage());
+        }
+    }
+
+    @Override
+    public Inventory updateInventory(Long id, Inventory inventory) {
+
+        if (id != inventory.getId()) {
+            throw new BadRequest("Invalid Patient ID provided for path");
+        }
+
+        // GIVE THE PATIENT ID IF NOT SPECIFIED IN BODY TO AVOID DUPLICATE USERS
+        if (inventory.getId() == null) {
+            inventory.setId(id);
+        }
+
+        try {
+            logger.info("Updated Inventory ID: " + inventory.getId());
+            return inventoryRepository.save(inventory);
+        } catch (DataAccessException dae) {
+            logger.error(dae.getMessage());
+            throw new ServerError(dae.getMessage());
         }
     }
 }
