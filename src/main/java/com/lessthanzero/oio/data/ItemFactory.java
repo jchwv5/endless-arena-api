@@ -10,33 +10,92 @@ public class ItemFactory {
         public List<Item> generateItems() {
             List<Item> itemList = new ArrayList<>();
 
-            Item armor1 = new Item();
-            armor1.setName("Rusted Armor");
-            armor1.setType("Armor");
-            armor1.setSubtype("Armor");
-            armor1.setDef(5);
-            armor1.setResistance("none");
-            armor1.setVulnerability("none");
-            armor1.setValue(1);
-            itemList.add(armor1);
+            //index0
+            Item rustedArmor = new Item();
+            rustedArmor.setName("Rusted Armor");
+            rustedArmor.setType("Armor");
+            rustedArmor.setSubtype("Armor");
+            rustedArmor.setDef(5);
+            rustedArmor.setResistance("none");
+            rustedArmor.setVulnerability("none");
+            rustedArmor.setValue(1);
+            itemList.add(rustedArmor);
 
-            Item shield1 = new Item();
-            shield1.setName("Rusted Shield");
-            shield1.setType("Shield");
-            shield1.setDef(2);
-            shield1.setBlockChance(10);
-            shield1.setValue(1);
-            itemList.add(shield1);
+            //index1
+            Item rustedShield = new Item();
+            rustedShield.setName("Rusted Shield");
+            rustedShield.setType("Shield");
+            rustedShield.setDef(2);
+            rustedShield.setBlockChance(10);
+            rustedShield.setValue(1);
+            itemList.add(rustedShield);
 
-            Item weapon1 = new Item();
-            weapon1.setName("Broken Sword");
-            weapon1.setType("Weapon");
-            weapon1.setSubtype("Sword");
-            weapon1.setMinAttack(2);
-            weapon1.setMaxAttack(4);
-            weapon1.setCritChance(2);
-            weapon1.setValue(1);
-            itemList.add(weapon1);
+            //index2
+            Item brokenSword = new Item();
+            brokenSword.setName("Broken Sword");
+            brokenSword.setType("Weapon");
+            brokenSword.setSubtype("Sword");
+            brokenSword.setMinAttack(2);
+            brokenSword.setMaxAttack(4);
+            brokenSword.setCritChance(2);
+            brokenSword.setValue(1);
+            itemList.add(brokenSword);
+
+            //index3
+            Item healingPotion = new Item();
+            healingPotion.setName("Healing Potion");
+            healingPotion.setType("Consumable");
+            healingPotion.setSubtype("Healing");
+            itemList.add(healingPotion);
+
+            //index4
+            Item manaPotion = new Item();
+            manaPotion.setName("Mana Potion");
+            manaPotion.setType("Consumable");
+            manaPotion.setSubtype("Healing");
+            itemList.add(manaPotion);
+
+            //index5
+            Item greenGoo = new Item();
+            greenGoo.setName("Green Goo");
+            greenGoo.setType("Crafting");
+            itemList.add(greenGoo);
+
+            //index6
+            Item copperOre = new Item();
+            copperOre.setName("Copper Ore");
+            copperOre.setType("Crafting");
+            itemList.add(copperOre);
+
+            //index7
+            Item ironOre = new Item();
+            ironOre.setName("Iron Ore");
+            ironOre.setType("Crafting");
+            itemList.add(ironOre);
+
+            //index8
+            Item skull = new Item();
+            skull.setName("Skull");
+            skull.setType("Crafting");
+            itemList.add(skull);
+
+            //index9
+            Item bone = new Item();
+            bone.setName("Bone");
+            bone.setType("Crafting");
+            itemList.add(bone);
+
+            //index10
+            Item wolfFang = new Item();
+            wolfFang.setName("Wolf Fang");
+            wolfFang.setType("Crafting");
+            itemList.add(wolfFang);
+
+            //index11
+            Item wolfPelt = new Item();
+            wolfPelt.setName("Wolf Pelt");
+            wolfPelt.setType("Crafting");
+            itemList.add(wolfPelt);
 
             return itemList;
         }

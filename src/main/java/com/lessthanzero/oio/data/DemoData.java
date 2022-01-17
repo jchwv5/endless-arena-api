@@ -4,6 +4,8 @@ import com.lessthanzero.oio.domains.inventory.Inventory;
 import com.lessthanzero.oio.domains.inventory.InventoryRepository;
 import com.lessthanzero.oio.domains.item.Item;
 import com.lessthanzero.oio.domains.item.ItemRepository;
+import com.lessthanzero.oio.domains.loot.CommonLootTable;
+import com.lessthanzero.oio.domains.loot.CommonLootTableRepository;
 import com.lessthanzero.oio.domains.monster.Monster;
 import com.lessthanzero.oio.domains.monster.MonsterRepository;
 import com.lessthanzero.oio.domains.player.Player;
@@ -37,6 +39,9 @@ public class DemoData implements CommandLineRunner {
 
     @Autowired
     private InventoryRepository inventoryRepository;
+
+    @Autowired
+    private CommonLootTableRepository commonLootTableRepository;
 
     @Autowired
     private Environment env;
@@ -82,6 +87,62 @@ public class DemoData implements CommandLineRunner {
         inventory3.setQuantity(1);
         inventoryList.add(inventory3);
 
+        List<CommonLootTable> commonLootTableList = new ArrayList<>();
+
+        CommonLootTable slimeCommonLootTable1 = new CommonLootTable();
+        slimeCommonLootTable1.setMonster(monsterList.get(0));
+        slimeCommonLootTable1.setItem(itemList.get(5));
+        slimeCommonLootTable1.setDropChanceHigh(30);
+        slimeCommonLootTable1.setDropChanceLow(6);
+        commonLootTableList.add(slimeCommonLootTable1);
+
+        CommonLootTable slimeCommonLootTable2 = new CommonLootTable();
+        slimeCommonLootTable2.setMonster(monsterList.get(0));
+        slimeCommonLootTable2.setItem(itemList.get(6));
+        slimeCommonLootTable2.setDropChanceLow(31);
+        slimeCommonLootTable2.setDropChanceHigh(40);
+        commonLootTableList.add(slimeCommonLootTable2);
+
+        CommonLootTable slimeCommonLootTable3 = new CommonLootTable();
+        slimeCommonLootTable3.setMonster(monsterList.get(0));
+        slimeCommonLootTable3.setItem(itemList.get(7));
+        slimeCommonLootTable3.setDropChanceLow(41);
+        slimeCommonLootTable3.setDropChanceHigh(50);
+        commonLootTableList.add(slimeCommonLootTable3);
+
+        CommonLootTable wolfCommonLootTable1 = new CommonLootTable();
+        wolfCommonLootTable1.setMonster(monsterList.get(2));
+        wolfCommonLootTable1.setItem(itemList.get(10));
+        wolfCommonLootTable1.setDropChanceLow(1);
+        wolfCommonLootTable1.setDropChanceHigh(10);
+        commonLootTableList.add(wolfCommonLootTable1);
+
+
+        CommonLootTable wolfCommonLootTable2 = new CommonLootTable();
+        wolfCommonLootTable2.setMonster(monsterList.get(2));
+        wolfCommonLootTable2.setItem(itemList.get(11));
+        wolfCommonLootTable2.setDropChanceLow(11);
+        wolfCommonLootTable2.setDropChanceHigh(20);
+        commonLootTableList.add(wolfCommonLootTable2);
+
+        CommonLootTable skeletonCommonLootTable1 = new CommonLootTable();
+        skeletonCommonLootTable1.setMonster(monsterList.get(3));
+        skeletonCommonLootTable1.setItem(itemList.get(8));
+        skeletonCommonLootTable1.setDropChanceLow(1);
+        skeletonCommonLootTable1.setDropChanceHigh(10);
+        commonLootTableList.add(skeletonCommonLootTable1);
+
+        CommonLootTable skeletonCommonLootTable2 = new CommonLootTable();
+        skeletonCommonLootTable2.setMonster(monsterList.get(3));
+        skeletonCommonLootTable2.setItem(itemList.get(9));
+        skeletonCommonLootTable2.setDropChanceLow(11);
+        skeletonCommonLootTable2.setDropChanceHigh(15);
+        commonLootTableList.add(skeletonCommonLootTable2);
+
+
+
+
+
         // Persist them to the database
         logger.info("Loading monsters");
         monsterRepository.saveAll(monsterList);
@@ -91,6 +152,9 @@ public class DemoData implements CommandLineRunner {
         itemRepository.saveAll(itemList);
         logger.info("Populating player inventory");
         inventoryRepository.saveAll(inventoryList);
+        logger.info("Populating common loot tables");
+        commonLootTableRepository.saveAll(commonLootTableList);
+
 
 
         logger.info("Data load completed.You can make requests now.");

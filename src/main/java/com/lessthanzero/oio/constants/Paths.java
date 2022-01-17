@@ -7,4 +7,5 @@ public class Paths {
   public static final String PLAYERS_PATH = "/players";
   public static final String ITEM_PATH = "/items";
   public static final String INVENTORY_PATH = "/inventory";
+  public static final String COMMON_LOOT_TABLE_PATH = "/common";
 }
