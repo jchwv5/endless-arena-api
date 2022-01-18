@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="oio-api" />
         <module name="Oio-api" />
         <module name="patients-api" />
         <module name="sports-apparel-api" />
@@ -15,6 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Oio-api" options="-parameters" />
+      <module name="oio-api" options="-parameters" />
       <module name="patients-api" options="-parameters" />
       <module name="sports-apparel-api" options="-parameters" />
     </option>

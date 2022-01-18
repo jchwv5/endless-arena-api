@@ -19,6 +19,7 @@ public class ItemFactory {
             rustedArmor.setResistance("none");
             rustedArmor.setVulnerability("none");
             rustedArmor.setValue(1);
+            rustedArmor.setImgSrc("../assets/RustedArmor.png");
             itemList.add(rustedArmor);
 
             //index1
@@ -28,6 +29,7 @@ public class ItemFactory {
             rustedShield.setDef(2);
             rustedShield.setBlockChance(10);
             rustedShield.setValue(1);
+            rustedShield.setImgSrc("../assets/RustedShield.png");
             itemList.add(rustedShield);
 
             //index2
@@ -39,6 +41,7 @@ public class ItemFactory {
             brokenSword.setMaxAttack(4);
             brokenSword.setCritChance(2);
             brokenSword.setValue(1);
+            brokenSword.setImgSrc("../assets/BrokenSword.png");
             itemList.add(brokenSword);
 
             //index3

@@ -1,5 +1,7 @@
 package com.lessthanzero.oio.domains.item;
 
+import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,10 +37,12 @@ public class Item {
 
     private Integer value;
 
+    private String imgSrc;
+
     public Item() {
     }
 
-    public Item(Long id, String name, String type, String subtype, Integer def, String resistance, String vulnerability, Integer blockChance, Integer minAttack, Integer maxAttack, Integer critChance, Integer value) {
+    public Item(Long id, String name, String type, String subtype, Integer def, String resistance, String vulnerability, Integer blockChance, Integer minAttack, Integer maxAttack, Integer critChance, Integer value, String imgSrc) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -51,6 +55,7 @@ public class Item {
         this.maxAttack = maxAttack;
         this.critChance = critChance;
         this.value = value;
+        this.imgSrc = imgSrc;
     }
 
     public Long getId() {
@@ -149,5 +154,43 @@ public class Item {
         this.value = value;
     }
 
+    public String getImgSrc() {
+        return imgSrc;
+    }
 
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Item)) return false;
+        Item item = (Item) o;
+        return Objects.equals(getId(), item.getId()) && Objects.equals(getName(), item.getName()) && Objects.equals(getType(), item.getType()) && Objects.equals(getSubtype(), item.getSubtype()) && Objects.equals(getDef(), item.getDef()) && Objects.equals(getResistance(), item.getResistance()) && Objects.equals(getVulnerability(), item.getVulnerability()) && Objects.equals(getBlockChance(), item.getBlockChance()) && Objects.equals(getMinAttack(), item.getMinAttack()) && Objects.equals(getMaxAttack(), item.getMaxAttack()) && Objects.equals(getCritChance(), item.getCritChance()) && Objects.equals(getValue(), item.getValue()) && Objects.equals(getImgSrc(), item.getImgSrc());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getType(), getSubtype(), getDef(), getResistance(), getVulnerability(), getBlockChance(), getMinAttack(), getMaxAttack(), getCritChance(), getValue(), getImgSrc());
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", subtype='" + subtype + '\'' +
+                ", def=" + def +
+                ", resistance='" + resistance + '\'' +
+                ", vulnerability='" + vulnerability + '\'' +
+                ", blockChance=" + blockChance +
+                ", minAttack=" + minAttack +
+                ", maxAttack=" + maxAttack +
+                ", critChance=" + critChance +
+                ", value=" + value +
+                ", imgSrc='" + imgSrc + '\'' +
+                '}';
+    }
 }
