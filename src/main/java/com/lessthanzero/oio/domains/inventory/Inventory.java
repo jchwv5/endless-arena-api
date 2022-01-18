@@ -16,11 +16,9 @@ public class Inventory {
     private Long id;
 
     @ManyToOne
-    @JsonIgnore
     private Player player;
 
     @ManyToOne
-    @JsonIgnoreProperties("items")
     private Item item;
 
     private int quantity;

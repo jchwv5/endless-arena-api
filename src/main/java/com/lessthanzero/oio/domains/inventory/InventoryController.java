@@ -28,6 +28,13 @@ public class InventoryController {
         return new ResponseEntity<>(inventoryService.getInventoryByPlayerId(id), HttpStatus.OK);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Inventory>> getAllInventory()
+            throws Exception {
+        logger.info("Request received for Get Inventory");
+        return new ResponseEntity<>(inventoryService.getAllInventory(), HttpStatus.OK);
+    }
+
     @PutMapping(path = "/{id}")
     public ResponseEntity<Inventory> updatePlayer(
             @PathVariable Long id,

@@ -53,4 +53,14 @@ public class InventoryServiceImpl implements InventoryService{
             throw new ServerError(dae.getMessage());
         }
     }
+
+    @Override
+    public List<Inventory> getAllInventory() {
+        try {
+            return inventoryRepository.findAll();
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            throw new ServerError(e.getMessage());
+        }
+    }
 }
