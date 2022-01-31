@@ -12,6 +12,7 @@ public class PlayerFactory {
 
         Player player1;
         player1 = new Player();
+        player1.setEmail("jchwv5@gmail.com");
         player1.setName("Dusk");
         player1.setLevel(1);
         player1.setHealth(50);

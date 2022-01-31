@@ -27,10 +27,17 @@ public class PlayerController {
      * @return Monster with matching ID
      */
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Player> getPlayerById(@PathVariable Long id)
+    public ResponseEntity<Player> getPlayerById(@PathVariable UUID id)
             throws Exception {
         logger.info("Request received for Get Monster by ID: " + id);
         return new ResponseEntity<>(playerService.getPlayerById(id), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/{email}")
+    public ResponseEntity<Player> getPlayerById(@PathVariable String email)
+            throws Exception {
+        logger.info("Request received for Get Monster by ID: " + email);
+        return new ResponseEntity<>(playerService.getPlayerByEmail(email), HttpStatus.OK);
     }
 
     /**
@@ -38,7 +45,7 @@ public class PlayerController {
      * @return list of patients currently present in the database
      */
     @GetMapping
-    public ResponseEntity<List<Player>> getMonsters() {
+    public ResponseEntity<List<Player>> getPlayers() {
         logger.info("Request received for getMonsters");
 
         return new ResponseEntity<>(playerService.getPlayers(), HttpStatus.OK);

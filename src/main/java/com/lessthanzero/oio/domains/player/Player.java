@@ -15,6 +15,8 @@ public class Player {
     @Column(name = "id", columnDefinition = "VARCHAR(255)")
     private UUID id;
     @Required
+    private String email;
+    @Required
     private String name;
     @Required
     private Integer level;
@@ -42,8 +44,9 @@ public class Player {
     public Player() {
     }
 
-    public Player(UUID id, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
+    public Player(UUID id, String email, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
         this.id = id;
+        this.email = email;
         this.name = name;
         this.level = level;
         this.health = health;
@@ -64,6 +67,14 @@ public class Player {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -167,18 +178,19 @@ public class Player {
         if (this == o) return true;
         if (!(o instanceof Player)) return false;
         Player player = (Player) o;
-        return Objects.equals(getId(), player.getId()) && Objects.equals(getName(), player.getName()) && Objects.equals(getLevel(), player.getLevel()) && Objects.equals(getHealth(), player.getHealth()) && Objects.equals(getStr(), player.getStr()) && Objects.equals(getAgi(), player.getAgi()) && Objects.equals(getIntel(), player.getIntel()) && Objects.equals(getWill(), player.getWill()) && Objects.equals(getCon(), player.getCon()) && Objects.equals(getExp(), player.getExp()) && Objects.equals(getWeaponId(), player.getWeaponId()) && Objects.equals(getShieldId(), player.getShieldId()) && Objects.equals(getArmorId(), player.getArmorId());
+        return Objects.equals(getId(), player.getId()) && Objects.equals(getEmail(), player.getEmail()) && Objects.equals(getName(), player.getName()) && Objects.equals(getLevel(), player.getLevel()) && Objects.equals(getHealth(), player.getHealth()) && Objects.equals(getStr(), player.getStr()) && Objects.equals(getAgi(), player.getAgi()) && Objects.equals(getIntel(), player.getIntel()) && Objects.equals(getWill(), player.getWill()) && Objects.equals(getCon(), player.getCon()) && Objects.equals(getExp(), player.getExp()) && Objects.equals(getWeaponId(), player.getWeaponId()) && Objects.equals(getShieldId(), player.getShieldId()) && Objects.equals(getArmorId(), player.getArmorId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getLevel(), getHealth(), getStr(), getAgi(), getIntel(), getWill(), getCon(), getExp(), getWeaponId(), getShieldId(), getArmorId());
+        return Objects.hash(getId(), getEmail(), getName(), getLevel(), getHealth(), getStr(), getAgi(), getIntel(), getWill(), getCon(), getExp(), getWeaponId(), getShieldId(), getArmorId());
     }
 
     @Override
     public String toString() {
         return "Player{" +
                 "id=" + id +
+                ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", level=" + level +
                 ", health=" + health +

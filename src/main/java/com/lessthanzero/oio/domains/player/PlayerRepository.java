@@ -3,9 +3,12 @@ package com.lessthanzero.oio.domains.player;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface PlayerRepository extends JpaRepository<Player, Long>,
+import java.util.UUID;
+
+public interface PlayerRepository extends JpaRepository<Player, UUID>,
         JpaSpecificationExecutor<Player> {
 
-    Player getPlayerById(Long id);
+    Player getPlayerById(UUID id);
 
+    Player getPlayerByEmail(String email);
 }

@@ -31,7 +31,7 @@ public class PlayerServiceImpl implements PlayerService{
      * @return - encounter with associated EncounterId
      */
     @Override
-    public Player getPlayerById (Long id) {
+    public Player getPlayerById (UUID id) {
         try {
             return playerRepository.getPlayerById(id);
         } catch (DataAccessException e) {
@@ -72,6 +72,16 @@ public class PlayerServiceImpl implements PlayerService{
         } catch (DataAccessException dae) {
             logger.error(dae.getMessage());
             throw new ServerError(dae.getMessage());
+        }
+    }
+
+    @Override
+    public Player getPlayerByEmail(String email) {
+        try {
+            return playerRepository.getPlayerByEmail(email);
+        } catch (DataAccessException e) {
+            logger.error(e.getMessage());
+            throw new ServerError(e.getMessage());
         }
     }
 }
