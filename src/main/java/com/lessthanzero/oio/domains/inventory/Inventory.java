@@ -4,16 +4,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.lessthanzero.oio.domains.item.Item;
 import com.lessthanzero.oio.domains.player.Player;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 public class Inventory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", columnDefinition = "VARCHAR(255)")
+    private UUID id;
 
     @ManyToOne
     private Player player;
@@ -26,18 +30,18 @@ public class Inventory {
     public Inventory() {
     }
 
-    public Inventory(Long id, Player player, Item item, int quantity) {
+    public Inventory(UUID id, Player player, Item item, int quantity) {
         this.id = id;
         this.player = player;
         this.item = item;
         this.quantity = quantity;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

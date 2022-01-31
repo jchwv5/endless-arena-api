@@ -1,18 +1,19 @@
 package com.lessthanzero.oio.domains.player;
 
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 public class Player {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", columnDefinition = "VARCHAR(255)")
+    private UUID id;
     @Required
     private String name;
     @Required
@@ -41,7 +42,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(Long id, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
+    public Player(UUID id, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
         this.id = id;
         this.name = name;
         this.level = level;
@@ -57,11 +58,11 @@ public class Player {
         this.armorId = armorId;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

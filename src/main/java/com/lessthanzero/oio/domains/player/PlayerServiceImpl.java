@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class PlayerServiceImpl implements PlayerService{
@@ -54,7 +55,7 @@ public class PlayerServiceImpl implements PlayerService{
     }
 
     @Override
-    public Player updatePlayer(Long id, Player player) {
+    public Player updatePlayer(UUID id, Player player) {
 
         if (id != player.getId()) {
             throw new BadRequest("Invalid Patient ID provided for path");

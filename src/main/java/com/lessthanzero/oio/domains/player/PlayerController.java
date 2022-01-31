@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 import static com.lessthanzero.oio.constants.Paths.PLAYERS_PATH;
 
@@ -45,7 +46,7 @@ public class PlayerController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<Player> updatePlayer(
-            @PathVariable Long id,
+            @PathVariable UUID id,
             @RequestBody Player player
     ) {
         logger.info("Request received for Update User");

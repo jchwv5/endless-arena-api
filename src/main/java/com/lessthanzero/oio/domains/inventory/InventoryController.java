@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 import static com.lessthanzero.oio.constants.Paths.INVENTORY_PATH;
 
@@ -37,7 +38,7 @@ public class InventoryController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<Inventory> updatePlayer(
-            @PathVariable Long id,
+            @PathVariable UUID id,
             @RequestBody Inventory inventory
     ) {
         logger.info("Request received for Update User");

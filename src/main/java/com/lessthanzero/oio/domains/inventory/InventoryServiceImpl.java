@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class InventoryServiceImpl implements InventoryService{
@@ -34,7 +35,7 @@ public class InventoryServiceImpl implements InventoryService{
     }
 
     @Override
-    public Inventory updateInventory(Long id, Inventory inventory) {
+    public Inventory updateInventory(UUID id, Inventory inventory) {
 
         if (id != inventory.getId()) {
             throw new BadRequest("Invalid Patient ID provided for path");
