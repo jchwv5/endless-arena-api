@@ -20,19 +20,6 @@ public class PlayerController {
     @Autowired
     private PlayerService playerService;
 
-    /**
-     * Retrieves a monster from the database with associated ID
-     *
-     * @param id - ID to search the database for
-     * @return Monster with matching ID
-     */
-    @GetMapping(path = "/{id}")
-    public ResponseEntity<Player> getPlayerById(@PathVariable UUID id)
-            throws Exception {
-        logger.info("Request received for Get Monster by ID: " + id);
-        return new ResponseEntity<>(playerService.getPlayerById(id), HttpStatus.OK);
-    }
-
     @GetMapping(path = "/{email}")
     public ResponseEntity<Player> getPlayerById(@PathVariable String email)
             throws Exception {
