@@ -23,7 +23,7 @@ public class InventoryController {
     private InventoryService inventoryService;
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<List<Inventory>> getInventoryByPlayerId(@PathVariable Long id)
+    public ResponseEntity<List<Inventory>> getInventoryByPlayerId(@PathVariable UUID id)
             throws Exception {
         logger.info("Request received for Get Inventory by Player ID: " + id);
         return new ResponseEntity<>(inventoryService.getInventoryByPlayerId(id), HttpStatus.OK);

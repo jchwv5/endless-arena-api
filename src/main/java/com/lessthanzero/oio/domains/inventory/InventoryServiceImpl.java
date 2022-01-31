@@ -1,6 +1,5 @@
 package com.lessthanzero.oio.domains.inventory;
 
-import com.lessthanzero.oio.domains.player.Player;
 import com.lessthanzero.oio.exceptions.BadRequest;
 import com.lessthanzero.oio.exceptions.ServerError;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +24,7 @@ public class InventoryServiceImpl implements InventoryService{
     @PersistenceContext
     private EntityManager entityManager;
     @Override
-    public List<Inventory> getInventoryByPlayerId(Long id) {
+    public List<Inventory> getInventoryByPlayerId(UUID id) {
         try {
             return inventoryRepository.getInventoryByPlayerId(id);
         } catch (DataAccessException e) {
