@@ -24,7 +24,7 @@ public class InventoryServiceImpl implements InventoryService{
     @PersistenceContext
     private EntityManager entityManager;
     @Override
-    public List<Inventory> getInventoryByPlayerId(UUID id) {
+    public List<Inventory> getInventoryByPlayerId(Long id) {
         try {
             return inventoryRepository.getInventoryByPlayerId(id);
         } catch (DataAccessException e) {

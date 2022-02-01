@@ -8,5 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, UUID> {
-    List<Inventory> getInventoryByPlayerId(UUID Id);
+    List<Inventory> getInventoryByPlayerId(Long Id);
 }
