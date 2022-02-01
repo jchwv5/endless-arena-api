@@ -1,7 +1,4 @@
 package com.lessthanzero.oio.domains.inventory;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.lessthanzero.oio.domains.item.Item;
 import com.lessthanzero.oio.domains.player.Player;
 import org.hibernate.annotations.GenericGenerator;

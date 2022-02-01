@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface InventoryRepository extends JpaRepository<Inventory, Long> {
+public interface InventoryRepository extends JpaRepository<Inventory, UUID> {
     List<Inventory> getInventoryByPlayerId(UUID Id);
 }

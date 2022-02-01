@@ -10,29 +10,27 @@ import java.util.UUID;
 @Entity
 public class Player {
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "id", columnDefinition = "VARCHAR(255)")
-    private UUID id;
-    @Required
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String email;
-    @Required
+
     private String name;
-    @Required
+
     private Integer level;
-    @Required
+
     private Integer health;
-    @Required
+
     private Integer str;
-    @Required
+
     private Integer agi;
-    @Required
+
     private Integer intel;
-    @Required
+
     private Integer will;
-    @Required
+
     private Integer con;
-    @Required
+
     private Integer exp;
 
     private Long weaponId;
@@ -44,7 +42,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(UUID id, String email, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
+    public Player(Long id, String email, String name, Integer level, Integer health, Integer str, Integer agi, Integer intel, Integer will, Integer con, Integer exp, Long weaponId, Long shieldId, Long armorId) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -61,11 +59,11 @@ public class Player {
         this.armorId = armorId;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

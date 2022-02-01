@@ -31,7 +31,7 @@ public class PlayerServiceImpl implements PlayerService{
      * @return - encounter with associated EncounterId
      */
     @Override
-    public Player getPlayerById (UUID id) {
+    public Player getPlayerById (Long id) {
         try {
             return playerRepository.getPlayerById(id);
         } catch (DataAccessException e) {
@@ -55,7 +55,7 @@ public class PlayerServiceImpl implements PlayerService{
     }
 
     @Override
-    public Player updatePlayer(UUID id, Player player) {
+    public Player updatePlayer(Long id, Player player) {
 
         if (id != player.getId()) {
             throw new BadRequest("Invalid Patient ID provided for path");

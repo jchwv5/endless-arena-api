@@ -1,10 +1,10 @@
 package com.lessthanzero.oio.domains.loot;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.lessthanzero.oio.domains.item.Item;
 import com.lessthanzero.oio.domains.monster.Monster;
-import com.lessthanzero.oio.domains.player.Player;
+
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -21,7 +21,6 @@ public class CommonLootTable {
     private Monster monster;
 
     @ManyToOne
-    @JsonIgnoreProperties("items")
     private Item item;
 
     private int dropChanceLow;

@@ -40,7 +40,7 @@ public class PlayerController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<Player> updatePlayer(
-            @PathVariable UUID id,
+            @PathVariable Long id,
             @RequestBody Player player
     ) {
         logger.info("Request received for Update User");

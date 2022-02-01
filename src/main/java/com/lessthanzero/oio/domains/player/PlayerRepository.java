@@ -5,10 +5,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.UUID;
 
-public interface PlayerRepository extends JpaRepository<Player, UUID>,
+public interface PlayerRepository extends JpaRepository<Player, Long>,
         JpaSpecificationExecutor<Player> {
 
-    Player getPlayerById(UUID id);
+    Player getPlayerById(Long id);
 
     Player getPlayerByEmail(String email);
 }
